@@ -1,30 +1,25 @@
-const sum = (a,b) => {
-    return a + b
+// app.js
+
+const sum = (a, b) => {
+    return a + b;
+};
+
+const fromEuroToDollar = (euro) => {
+    const dollarRate = 1.07;
+    return euro * dollarRate;
 }
 
-console.log(sum(7,3))
-
-let oneEuroIs = {
-    "JPY": 156.5, // japan yen
-    "USD": 1.07, // us dollar
-    "GBP": 0.87, // british pound
+const fromDollarToYen = (dollar) => {
+    const yenRate = 156.5;
+    const dollarToEuroRate = 1 / 1.07;
+    return dollar * dollarToEuroRate * yenRate;
 }
 
-
-function fromEuroToDollar(euros) {
-    return euros * oneEuroIs.USD;
+const fromYenToPound = (yen) => {
+    const poundRate = 0.87;
+    const yenToEuroRate = 1 / 156.5;
+    return yen * yenToEuroRate * poundRate;
 }
 
-
-function fromDollarToYen(dollars) {
-    let euros = dollars / oneEuroIs.USD; 
-    return euros * oneEuroIs.JPY;       
-}
-
-
-function fromYenToPound(yens) {
-    let euros = yens / oneEuroIs.JPY; 
-    return euros * oneEuroIs.GBP;     
-}
-
-module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound};
+// Export the functions
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound };

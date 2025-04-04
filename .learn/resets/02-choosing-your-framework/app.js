@@ -35,6 +35,6 @@ console.log(sum(7,3))
 // (similar a la palabra clave "export" cuando se usa webpack)
 module.exports = { sum, fromEuroToDollar };
 
-const { fromEuroToDollar } = require("./test");
+const { fromEuroToDollar } = require("test./");
 
 
